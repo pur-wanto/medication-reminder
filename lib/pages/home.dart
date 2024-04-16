@@ -27,17 +27,6 @@ class _HomeState extends State<Home> {
                   const SizedBox(
                     height: 70,
                   ),
-
-                  // Widget Kalender
-                  // CalendarSlider(
-                  //   initialDate: DateTime.now(),
-                  //   firstDate:
-                  //       DateTime.now().subtract(const Duration(days: 140)),
-                  //   lastDate: DateTime.now().add(const Duration(days: 4)),
-                  //   onDateSelected: (date) {
-                  //     // print(date);
-                  //   },
-                  // ),
                   Container(
                     alignment: Alignment.bottomLeft,
                     margin: const EdgeInsets.symmetric(horizontal: 25),
@@ -593,44 +582,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          // Align(
-          //     alignment: const Alignment(0, 0.9),
-          //     child: GNav(
-          //       rippleColor: Colors.grey[300]!,
-          //       hoverColor: Colors.grey[100]!,
-          //       gap: 8,
-          //       activeColor: Colors.black,
-          //       iconSize: 24,
-          //       padding:
-          //           const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-          //       duration: const Duration(milliseconds: 400),
-          //       tabBackgroundColor: Colors.grey[100]!,
-          //       color: const Color(0xFF8863E4),
-          //       tabs: const [
-          //         GButton(
-          //           icon: Icons.home,
-          //           text: 'Home',
-          //         ),
-          //         GButton(
-          //           icon: Icons.heart_broken,
-          //           text: 'Likes',
-          //         ),
-          //         GButton(
-          //           icon: Icons.message,
-          //           text: 'Chat',
-          //         ),
-          //         GButton(
-          //           icon: Icons.man,
-          //           text: 'Profile',
-          //         ),
-          //       ],
-          //       selectedIndex: selectedIndex,
-          //       onTabChange: (index) {
-          //         setState(() {
-          //           selectedIndex = index;
-          //         });
-          //       },
-          //     )),
         ],
       ),
     );

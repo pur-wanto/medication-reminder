@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:medication_reminder/pages/chat.dart';
 import 'package:medication_reminder/pages/home.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -57,7 +58,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         selectedIndex: selectedIndex,
         onTabChange: (index) {
           setState(() {
-            selectedIndex = index; // Memperbarui selectedIndex
+            selectedIndex = index;
           });
         },
       ),
@@ -88,7 +89,7 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("Chat"));
+    return const Chat();
   }
 }
 
