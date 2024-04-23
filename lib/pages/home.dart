@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:medication_reminder/pages/add_obat.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,9 +11,104 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  void show(BuildContext context) {
+    showModalBottomSheet(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        context: context,
+        builder: (ctx) => Container(
+              width: MediaQuery.of(context).size.width,
+              height: 300,
+              color: Colors.white54,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    child: const Text(
+                      "Menambahkan",
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontFamily: 'Poppins500',
+                          color: Colors.black),
+                    ),
+                  ),
+                  Center(
+                    child: Wrap(
+                      spacing: 30,
+                      runSpacing: 30,
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const AddObat()));
+                          },
+                          icon: Column(
+                            children: [
+                              Image.asset("assets/images/obat.png"),
+                              const Text("Obat",
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: 'Poppins400',
+                                      color: Colors.black))
+                            ],
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Column(
+                            children: [
+                              Image.asset("assets/images/buku-harian.png"),
+                              const Text("Buku Harian",
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: 'Poppins400',
+                                      color: Colors.black))
+                            ],
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Column(
+                            children: [
+                              Image.asset("assets/images/janji-temu.png"),
+                              const Text("Janji Temu",
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: 'Poppins400',
+                                      color: Colors.black))
+                            ],
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Column(
+                            children: [
+                              Image.asset(
+                                "assets/images/pengukuran.png",
+                                height: 50,
+                              ),
+                              const Text("Janji Temu",
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: 'Poppins400',
+                                      color: Colors.black))
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ));
+  }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Stack(
         children: [
@@ -483,40 +579,46 @@ class _HomeState extends State<Home> {
                   const SizedBox(
                     height: 12,
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white.withOpacity(0.4)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: const Color(0xFFAC8FFF),
+                  IconButton(
+                    onPressed: () {
+                      // ignore: avoid_print
+                      show(context);
+                    },
+                    icon: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white.withOpacity(0.4)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color(0xFFAC8FFF),
+                            ),
+                            child: Image.asset(
+                              "assets/images/drop.png",
+                              height: 30,
+                              width: 30,
+                            ),
                           ),
-                          child: Image.asset(
-                            "assets/images/drop.png",
-                            height: 30,
-                            width: 30,
+                          const Text(
+                            "Tambah Obat",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontFamily: "Poppins400"),
                           ),
-                        ),
-                        const Text(
-                          "General blood analysis",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontFamily: "Poppins400"),
-                        ),
-                        Image.asset(
-                          "assets/images/btn-right.png",
-                          height: 40,
-                          width: 40,
-                        ),
-                      ],
+                          Image.asset(
+                            "assets/images/btn-right.png",
+                            height: 40,
+                            width: 40,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

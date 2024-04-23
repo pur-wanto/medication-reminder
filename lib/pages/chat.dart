@@ -182,12 +182,14 @@ class _ChatState extends State<Chat> {
       if (response.statusCode == 200) {
         setState(() {
           _responseData = response.toString();
+          // ignore: avoid_print
           print(_responseData);
         });
       } else {
         throw Exception('Failed to load data');
       }
     } catch (e) {
+      // ignore: avoid_print
       print('Error: $e');
     }
   }
